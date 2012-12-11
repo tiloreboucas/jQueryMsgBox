@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+
+	<title></title>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.msgbox.js"></script>
+
+	<link rel="stylesheet" href="css/jquery.msgbox.css" />
+</head>
+<body>
+	<fieldset>
+		<legend>Iniciar Form Validator por tipo de campos</legend>
+	<div class="formvalidator_main" id="form5">
+			<dl>
+				<dt>Error</dt>
+				<dd>
+					<input type="text" class="erro" placeholder="Erro" />
+				</dd>
+				<dt>Hint</dt>
+				<dd>
+					<input type="text" class="hint" placeholder="Dica" />
+				</dd>
+				<dt>Error</dt>
+				<dd>
+					<input type="text" class="erro" placeholder="Erro" />
+				</dd>
+				<dt>Hint</dt>
+				<dd>
+					<input type="text" class="hint" placeholder="Dica" />
+				</dd>
+			</dl>
+		</div>
+		<button type="button" id="bt_teste">Let's Rock!</button>
+	</fieldset>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".erro").msgbox({
+            'type': 'erro',
+            'msg': 'Campo com erro!',
+            'autoShow': false
+        });
+
+        $(".hint").msgbox({
+            'type': 'hint',
+            'msg': 'Campo com Dica',
+            'autoShow': false
+        });	
+
+		$("#bt_teste").click(function(){
+			$(".erro").each(function(i, item){
+				$(item).msgbox('show');
+			});
+			
+			$(".hint").msgbox('show');	
+		});
+	});
+</script>
+</html>

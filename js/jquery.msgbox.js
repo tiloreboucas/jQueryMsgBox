@@ -44,7 +44,6 @@
 				$($this.attr.msgbox_main).addClass($this.attr.type);
 				
 				$($this.attr.msgbox_main).css({
-					//'max-width': $($this.attr.target).width(),
 					'bottom': $($this.attr.target).height()
 				});
 				
