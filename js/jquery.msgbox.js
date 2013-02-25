@@ -64,8 +64,7 @@
 			
 			show: function(){
 				var $this = this;
-				
-				$($this.attr.msgbox_main).show();
+				$this.attr.msgbox_main.show();
 			},
 			
 			hide: function(){

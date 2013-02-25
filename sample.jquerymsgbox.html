@@ -13,16 +13,8 @@
 <body>
 	<fieldset>
 		<legend>Iniciar Form Validator por tipo de campos</legend>
-	<div class="formvalidator_main" id="form5">
+		<div class="formvalidator_main" id="form1">
 			<dl>
-				<dt>Error</dt>
-				<dd>
-					<input type="text" class="erro" placeholder="Erro" />
-				</dd>
-				<dt>Hint</dt>
-				<dd>
-					<input type="text" class="hint" placeholder="Dica" />
-				</dd>
 				<dt>Error</dt>
 				<dd>
 					<input type="text" class="erro" placeholder="Erro" />
@@ -33,29 +25,51 @@
 				</dd>
 			</dl>
 		</div>
-		<button type="button" id="bt_teste">Let's Rock!</button>
+		<button type="button" id="bt_mostra">Mostra</button>
+		<button type="button" id="bt_esconde">Esconde</button>
+	</fieldset>
+	<fieldset>
+		<legend>Iniciar Form Validator por tipo de campos</legend>
+		<div class="formvalidator_main" id="form2">
+			<dl>
+				<dt>Error</dt>
+				<dd>
+					<input type="text" class="erro" placeholder="Erro" />
+				</dd>
+				<dt>Hint</dt>
+				<dd>
+					<input type="text" class="hint" placeholder="Dica" />
+				</dd>
+			</dl>
+		</div>
+		<button type="button" id="bt_mostra">Mostra</button>
+		<button type="button" id="bt_esconde">Esconde</button>
 	</fieldset>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$(".erro").msgbox({
+		$("input.erro").msgbox({
             'type': 'erro',
             'msg': 'Campo com erro!',
             'autoShow': false
         });
-
-        $(".hint").msgbox({
+		
+        $("input.hint").msgbox({
             'type': 'hint',
             'msg': 'Campo com Dica',
             'autoShow': false
         });	
-
-		$("#bt_teste").click(function(){
-			$(".erro").each(function(i, item){
+		
+		$("#bt_mostra").click(function(){
+			$("input").each(function(i, item){
 				$(item).msgbox('show');
 			});
-			
-			$(".hint").msgbox('show');	
+		});
+
+		$("#bt_esconde").click(function(){
+			$("input").each(function(i, item){
+				$(item).msgbox('hide');
+			});
 		});
 	});
 </script>
